@@ -8,6 +8,15 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: "1rem",
+      screens: {
+        lg: "1300px",
+        xl: "1300px",
+        "2xl": "1400px",
+      },
+    },
     extend: {
       fontFamily: {
         "alumni-sans": ["var(--font-alumni-sans)", "sans-serif"],
