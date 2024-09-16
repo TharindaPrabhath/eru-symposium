@@ -1,11 +1,19 @@
-import { Button } from "@/components/ui/button";
+import About from "@/components/about";
+import Awards from "@/components/awards";
+import Guidelines from "@/components/guidelines";
+import Hero from "@/components/hero";
+import Team from "@/components/team";
+import Timeline from "@/components/timeline";
 
 export default function Home() {
   return (
-    <div>
-      <Button className="font-alumni-sans">Click me</Button>
-      <p className="font-alumni-sans text-9xl font-bold">Hello world</p>
-      <p className="text-5xl">Hello world</p>
-    </div>
+    <main>
+      <Hero />
+      <About />
+      <Timeline />
+      <Guidelines />
+      <Awards />
+      <Team />
+    </main>
   );
 }
