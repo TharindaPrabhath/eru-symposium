@@ -65,8 +65,7 @@ function Footer() {
               <br />
               <br />
               Email: mawathagesa.19@uom.lk <br />
-              Phone: +94 11 265 0301 <br />
-              Ext: 4531 <br />
+              Phone: +94 11 265 0301 (Ext: 4531) <br />
             </p>
           </div>
         </div>
