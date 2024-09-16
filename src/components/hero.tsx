@@ -6,7 +6,7 @@ function Hero() {
   return (
     <section id="hero">
       <div
-        className="bg-cover bg-center bg-no-repeat h-[500px]"
+        className="bg-cover bg-center bg-no-repeat h-[800px] md:h-[500px]"
         style={{
           backgroundImage: "url('/group-photo.jpg')",
         }}
