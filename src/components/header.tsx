@@ -102,7 +102,11 @@ function Header() {
                 </Link>
 
                 <Button>
-                  <Link href="/signup" className="text-center">
+                  <Link
+                    href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
+                    className="text-center"
+                    target="_blank"
+                  >
                     Submit extended abstract
                   </Link>
                 </Button>
