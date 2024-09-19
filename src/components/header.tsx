@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -8,15 +8,37 @@ import Link from "next/link";
 // Components
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Separator } from "@/components/ui/separator";
 
 import { Menu } from "lucide-react";
 
+import { cn } from "@/lib/utils";
+
 const Links = [
-  { href: "#about", label: "About" },
-  { href: "#timeline", label: "Timeline" },
-  { href: "#guidelines", label: "Guidelines" },
-  { href: "#awards", label: "Awards" },
-  { href: "#team", label: "Team" },
+  { href: "/#about", label: "About" },
+  { href: "/#timeline", label: "Timeline" },
+  { href: "/#guidelines", label: "Guidelines" },
+  { href: "/#awards", label: "Awards" },
+  { href: "/#team", label: "Team" },
+];
+
+const PastProceedings = [
+  {
+    href: "/past-proceedings/eru-2023",
+    label: "ERU 2023",
+  },
+  {
+    href: "http://dl.lib.uom.lk/handle/123/16657/browse?value=ERU+Symposium+2021&type=conference",
+    label: "ERU 2021",
+  },
 ];
 
 function Header() {
@@ -86,21 +108,15 @@ function Header() {
             </SheetTrigger>
           </div>
           <SheetContent className="bg-neutral-50 flex items-center justify-center z-[999]">
-            <nav className="flex flex-col gap-8 w-full">
+            <nav className="flex flex-col gap-6 w-full">
               {Links.map((link) => (
                 <Link key={link.label} href={link.href} className="py-4">
-                  <p className="text-4xl font-semibold text-center text-stone-600 hover:text-stone-700">
+                  <p className="text-2xl font-semibold text-center text-stone-600 hover:text-stone-700">
                     {link.label}
                   </p>
                 </Link>
               ))}
-              <div className="flex flex-col gap-8 w-full">
-                <Link href="/">
-                  <p className="text-4xl font-semibold text-center text-stone-600 hover:text-stone-700">
-                    Past proceedings
-                  </p>
-                </Link>
-
+              <div className="flex flex-col gap-4 w-full">
                 <Button>
                   <Link
                     href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
@@ -110,15 +126,47 @@ function Header() {
                     Submit extended abstract
                   </Link>
                 </Button>
+                <Separator />
+                <p className="text-center text-sm text-primary font-semibold">
+                  Past Proceedings
+                </p>
+                <div className="flex flex-col justify-center gap-6 items-center">
+                  {PastProceedings.map((component) => (
+                    <Link
+                      id={component.label}
+                      href={component.href}
+                      className="font-semibold"
+                    >
+                      {component.label}
+                    </Link>
+                  ))}
+                </div>
               </div>
             </nav>
           </SheetContent>
         </Sheet>
 
         <div className="hidden flex-row lg:flex items-center gap-8">
-          <Link href="/" className="font-semibold">
-            Past proceedings
-          </Link>
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem className="hover:bg-transparent">
+                <NavigationMenuTrigger className="text-md font-semibold bg-transparent hover:bg-transparent">
+                  Past proceedings
+                </NavigationMenuTrigger>
+                <NavigationMenuContent>
+                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                    {PastProceedings.map((component) => (
+                      <ListItem
+                        key={component.label}
+                        title={component.label}
+                        href={component.href}
+                      ></ListItem>
+                    ))}
+                  </ul>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
           <Link
             href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
             target="_blank"
@@ -133,3 +181,29 @@ function Header() {
 }
 
 export default Header;
+
+const ListItem = React.forwardRef<
+  React.ElementRef<"a">,
+  React.ComponentPropsWithoutRef<"a">
+>(({ className, title, children, ...props }, ref) => {
+  return (
+    <li>
+      <NavigationMenuLink asChild>
+        <a
+          ref={ref}
+          className={cn(
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+            className
+          )}
+          {...props}
+        >
+          <div className="text-sm font-medium leading-none">{title}</div>
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
+            {children}
+          </p>
+        </a>
+      </NavigationMenuLink>
+    </li>
+  );
+});
+ListItem.displayName = "ListItem";

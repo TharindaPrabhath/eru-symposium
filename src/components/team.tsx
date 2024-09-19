@@ -27,7 +27,7 @@ function Team() {
             <Separator className="mt-2" />
             <div className="mt-8 flex flex-col justify-center md:flex-row items-center gap-4">
               <MemberCard
-                name="Dr. Gayani"
+                name="Dr. Gayani K. Nandasiri"
                 role="Co-Chair"
                 image="/team/Dr.Gayani.jpg"
               />
