@@ -46,7 +46,7 @@ function Team() {
               <MemberCard
                 name="Mr Prabhathiya Herath"
                 role="Local Organizing Chair"
-                image="/team/Prabhathiya.jpeg"
+                image="/team/Prabhathiya.jpg"
               />
               <MemberCard
                 name="Mr Amantha Mawathage"

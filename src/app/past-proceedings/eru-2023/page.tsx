@@ -29,7 +29,7 @@ function PastProceedings() {
                   target="_blank"
                 >
                   <Button className="bg-red-950 text-white font-semibold py-6 px-8">
-                    View more
+                    Proceedings
                   </Button>
                 </Link>
                 <Link
