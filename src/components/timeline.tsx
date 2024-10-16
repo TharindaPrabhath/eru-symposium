@@ -1,6 +1,7 @@
 const Blocks = [
   {
     date: "15th October 2024",
+    extendedDate: "22nd October 2024",
     title: "Extended Abstract Submission",
   },
   {
@@ -10,7 +11,6 @@ const Blocks = [
   {
     date: "28th November 2024",
     title: "Final Submission & Registration",
-    isDeadline: true,
   },
   {
     date: "10th - 11th December 2024",
@@ -42,18 +42,19 @@ export default Timeline;
 function Block({
   date,
   title,
-  isDeadline,
+  extendedDate,
 }: {
   date: string;
   title: string;
-  isDeadline?: boolean;
+  extendedDate?: string;
 }) {
   return (
     <div className="grid gap-1 text-sm relative">
       <div className="aspect-square w-5 bg-primary rounded-full absolute left-0 translate-x-[-33.5px] z-10 top-1" />
-      {isDeadline ? (
+      {extendedDate ? (
         <div className="text-teal-700 font-semibold">
-          <span className="mr-2 line-through">{date}</span>22nd October 2024
+          <span className="mr-2 line-through opacity-70">{date}</span>
+          {extendedDate}
         </div>
       ) : (
         <div className="text-teal-700 font-semibold">{date}</div>
