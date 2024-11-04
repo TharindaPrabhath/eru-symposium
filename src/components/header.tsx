@@ -133,7 +133,7 @@ function Header() {
                 <div className="flex flex-col justify-center gap-6 items-center">
                   {PastProceedings.map((component) => (
                     <Link
-                      id={component.label}
+                      key={component.label}
                       href={component.href}
                       className="font-semibold"
                     >
