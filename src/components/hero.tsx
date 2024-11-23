@@ -27,24 +27,24 @@ function Hero() {
               December 10-11, 2024 | University of Moratuwa
             </p>
             <div className="flex flex-row justify-center gap-4 mt-8">
-              <Link
+              {/* <Link
                 href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
                 target="_blank"
               >
                 <Button className="bg-red-950 text-white font-semibold py-6 px-8">
                   Submit extended abstract
                 </Button>
-              </Link>
+              </Link> */}
               <Link href="#about">
                 <Button className="font-semibold" variant="outline">
                   Learn More
                 </Button>
               </Link>
             </div>
-            <p className="text-gray-300 text-sm text-center mt-2">
+            {/* <p className="text-gray-300 text-sm text-center mt-2">
               * You may have to create a CMT account prior to submitting the
               paper
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

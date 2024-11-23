@@ -94,13 +94,13 @@ function Header() {
 
         <Sheet>
           <div className="flex flex-row items-center gap-4">
-            <Link
+            {/* <Link
               href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
               target="_blank"
               className="text-center"
             >
               <Button className="lg:hidden">Submit</Button>
-            </Link>
+            </Link> */}
             <SheetTrigger className="lg:hidden" asChild>
               <Button variant="ghost" size="icon">
                 <Menu className="w-8 h-8" />
@@ -117,7 +117,7 @@ function Header() {
                 </Link>
               ))}
               <div className="flex flex-col gap-4 w-full">
-                <Button>
+                {/* <Button>
                   <Link
                     href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
                     className="text-center"
@@ -125,7 +125,7 @@ function Header() {
                   >
                     Submit extended abstract
                   </Link>
-                </Button>
+                </Button> */}
                 <Separator />
                 <p className="text-center text-sm text-primary font-semibold">
                   Past Proceedings
@@ -167,13 +167,13 @@ function Header() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
-          <Link
+          {/* <Link
             href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FERUS2024"
             target="_blank"
             className="text-center"
           >
             <Button>Submit extended abstract</Button>
-          </Link>
+          </Link> */}
         </div>
       </div>
     </header>
